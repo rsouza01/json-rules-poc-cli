@@ -1,0 +1,81 @@
+[
+  {
+    "rules" : {
+      "all": [
+        {
+          "fact": "deviceGroup",
+          "operator": "equal",
+          "value": "ABC143"
+        },
+          {
+          "fact": "deviceType",
+          "operator": "equal",
+          "value": "TV"
+        },
+        {
+          "any": [
+            {
+              "fact": "country",
+              "operator": "equal",
+              "value": "NL"
+            },
+            {
+              "fact": "country",
+              "operator": "equal",
+              "value": "BE"
+            }
+          ]
+        }
+      ]
+    },
+    "event": {
+      "type": "fdrid-list",
+      "params": {
+        "fdrids": [
+          "NLNLNLNLNLNL-NLNLNLNLNLNL",
+          "BEBEBEBEBEBE-BEBEBEBEBEBE"
+        ]
+      }
+    }
+  },
+  {
+    "rules" : {
+      "all": [
+        {
+          "fact": "deviceGroup",
+          "operator": "equal",
+          "value": "ABC143"
+        },
+          {
+          "fact": "deviceType",
+          "operator": "equal",
+          "value": "TV"
+        },
+        {
+          "any": [
+            {
+              "fact": "country",
+              "operator": "equal",
+              "value": "PT"
+            },
+            {
+              "fact": "country",
+              "operator": "equal",
+              "value": "ES"
+            }
+          ]
+        }
+      ]
+    },
+    "event": {
+      "type": "fdrid-list",
+      "params": {
+        "fdrids": [
+          "PTPTPTPTPTPT-PTPTPTPTPTPT",
+          "ESESESESESES-ESESESESESES"
+        ]
+      }
+    }
+  }
+]
+

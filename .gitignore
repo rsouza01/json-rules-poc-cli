@@ -1,0 +1,8 @@
+.nyc_output
+.webpack
+dist
+reports
+node_modules
+configuration.json
+service.json
+dbs-mdm-*.json
