@@ -31,5 +31,15 @@
     "country": "PT",
     "internalInfo1": "<%to-be-normalized%>",
     "internalInfo2": "<%to-be-normalized%>"
+  },
+  {
+    "id": "4",
+    "organization" : 2,
+    "proposition" : 2,
+    "deviceType": "SHAVER",
+    "deviceGroup": "ABC143",
+    "country": "PT",
+    "internalInfo1": "<%to-be-normalized%>",
+    "internalInfo2": "<%to-be-normalized%>"
   }
 ]

@@ -52,24 +52,15 @@
           "operator": "equal",
           "value": "ABC143"
         },
-          {
+        {
           "fact": "deviceType",
           "operator": "equal",
           "value": "TV"
         },
         {
-          "any": [
-            {
-              "fact": "country",
-              "operator": "equal",
-              "value": "BR"
-            },
-            {
-              "fact": "country",
-              "operator": "equal",
-              "value": "AR"
-            }
-          ]
+          "fact": "country",
+          "operator": "in",
+          "value": ["BR", "AR"]
         }
       ]
     },
