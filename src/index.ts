@@ -1,7 +1,7 @@
 'use strict';
 
 import * as program from 'commander';
-import { FirmwareRuleEngine } from './ruleEngine';
+import { FirmwareRuleEngineProcessor } from './ruleEngineProcessor';
 
 program
   .version('1.0.0')
@@ -9,9 +9,13 @@ program
   .option('-r, --rules <rules>', 'Rules: Rules payload')
   .action(async (options) => {
     try {
-      console.log('Testing rules...');
+      console.log('------------------------------------------------------------------------');
+      console.log('JSON Rules CLI');
+      console.log('vs 1.0 - 2020-06-01');
+      console.log('------------------------------------------------------------------------');
+
       const processedRule: any =
-        await new FirmwareRuleEngine(options.facts, options.rules).process();
+        await new FirmwareRuleEngineProcessor(options.facts, options.rules).process();
 
       console.log('Rules processed with success.');
       console.log(`Status: ${JSON.stringify(processedRule)}`);
