@@ -1,4 +1,14 @@
-# JSON Rules CLI
+<h1 align="center">Welcome to json-rules-poc-cli 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+  <a href="#" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
+</p>
+
+> CLI utility to test Rules engine
+
+### 🏠 [Homepage](https://github.com/rsouza01/json-rules-poc-cli)
 
 ## Install
 
@@ -6,15 +16,9 @@
 npm install
 ```
 
-## Usage
-
-```sh
-npm run exec
-```
-
 ## Author
 
-👤 **Rodrigo de Souza**
+👤 **Rodrigo de Souza <rsouza01@gmail.com>**
 
 * Website: http://www.rodrigosouza.net.br
 * Github: [@rsouza01](https://github.com/rsouza01)
@@ -24,5 +28,5 @@ npm run exec
 
 Give a ⭐️ if this project helped you!
 
-## References
-* https://www.npmtrends.com/durable-vs-json-rules-engine-vs-json-rules-engine-simplified-vs-node-rules-vs-rule-reactor
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
