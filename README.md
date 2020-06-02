@@ -29,6 +29,7 @@ npm install
 Give a ⭐️ if this project helped you!
 
 ## References
+* https://github.com/CacheControl/json-rules-engine
 * https://www.npmtrends.com/durable-vs-json-rules-engine-vs-json-rules-engine-simplified-vs-node-rules-vs-rule-reactor
 
 
