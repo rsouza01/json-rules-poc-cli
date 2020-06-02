@@ -28,5 +28,9 @@ npm install
 
 Give a ⭐️ if this project helped you!
 
+## References
+* https://www.npmtrends.com/durable-vs-json-rules-engine-vs-json-rules-engine-simplified-vs-node-rules-vs-rule-reactor
+
+
 ***
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
