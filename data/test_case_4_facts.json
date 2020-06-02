@@ -1,0 +1,13 @@
+[
+  {
+    "id": "1",
+    "organization" : 1,
+    "proposition" : 1,
+    "deviceType": "TRIMMER",
+    "deviceGroup": "TRIM143",
+    "averageTemperature": 25,
+    "country": "JP",
+    "internalInfo1": "<%to-be-normalized%>",
+    "internalInfo2": "<%to-be-normalized%>"
+  }
+]
