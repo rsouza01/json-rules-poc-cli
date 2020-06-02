@@ -42,7 +42,11 @@ export class FirmwareRuleEngineProcessor {
       .then((results) => {
         console.log('========================================================================');
         console.log(`FACT: ${JSON.stringify(fact)}`);
-        console.log(`RESULT: ${JSON.stringify(results.events)}`);
+        console.log('------------------------------------------------------------------------');
+        console.log(`# OF RESULTS: ${results.events.length}`);
+        console.log(`RESULTS: ${JSON.stringify(results.events, null, 2)}`);
+
+
         console.log(`TRIGGERED: ${results.events.length > 0 ? 'TRUE' : 'FALSE'}`);
       })
       .catch(err => console.log(err.stack))
