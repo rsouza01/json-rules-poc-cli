@@ -101,6 +101,12 @@ export class Parser {
             case '!=':
                 this.advance()
                 return new Binary(left, 'BANG_EQUAL', this.add())
+            case '|':
+              this.advance()
+              return new Binary(left, 'OR', this.add())
+            case '&':
+              this.advance()
+              return new Binary(left, 'AND', this.add())
             default:
                 break;
         }

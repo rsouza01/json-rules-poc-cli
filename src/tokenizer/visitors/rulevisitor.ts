@@ -13,7 +13,7 @@
 export class RuleVisitor {
 
   visitBinary(ctx) {
-      const type = ctx.operator
+      const type = ctx.operator;
       switch (type) {
           case 'ADD':
               return ctx.left.visit(this) + ctx.right.visit(this);
@@ -44,13 +44,13 @@ export class RuleVisitor {
 
   visitGrouping(expr) {
       const e = expr.expr;
-          // log(expr)
       return e.visit(this);
   }
 
   visitExpressions(expressions) {
       for (const expr of expressions) {
-          console.log(`expr.visit: ${JSON.stringify(expr.visit(this))}`)
+          console.log(`expr: ${JSON.stringify(expr)}`);
+          console.log(`expr.visit: ${JSON.stringify(expr.visit(this))}`);
       }
   }
 }

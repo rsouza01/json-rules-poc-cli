@@ -36,19 +36,24 @@ export class ExpressionRuleRepository implements RuleRepository {
 
   async loadRules(fact: any): Promise<any> {
 
-    const tokenizer = Token.getInst();
-    const rule = '56 - 89 * 78';
+    // const rule = '89 * 78 & 1 + 2';
     // const rule = this.rules[0].rule_expression
+    // const rule = "$deviceGroup='ABC143' and $deviceType='TV' and $country in ['NL', 'BE']",
+    const rule = "$deviceGroup='ABC143'";
 
     console.log(`RULE: ${rule}`);
-    const tokens = tokenizer.tokenize(rule);
-    console.log(tokens);
+    const tokens = Token.getInst().tokenize(rule);
+    console.log(`TOKENS: ${JSON.stringify(tokens, null, 2)}`);
+    console.log('------------------------------------------------------------------------');
 
     const ast = new Parser().parse(rule);
 
-    console.log(`EXPR: ${JSON.stringify(ast, null, 2)}`);
+    console.log(`AST: ${JSON.stringify(ast, null, 2)}`);
+    console.log('------------------------------------------------------------------------');
 
     const evalRet = new Evaluator(ast).evaluate();
+    console.log(`EVAL_RET: ${JSON.stringify(evalRet, null, 2)}`);
+    console.log('------------------------------------------------------------------------');
 
     return [];
   }

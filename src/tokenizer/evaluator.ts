@@ -1,4 +1,4 @@
-import { RuleVisitor } from './rulevisitor';
+import { RuleVisitor } from './visitors/rulevisitor';
 
 
 // evaluator.js
@@ -12,6 +12,6 @@ export class Evaluator {
   }
   evaluate() {
       console.log('======================== RESULTS ========================')
-      this.visitor.visitExpressions(this.asts)
+      return this.visitor.visitExpressions(this.asts);
   }
 }
