@@ -1,15 +1,21 @@
 import engineFactory, { Engine } from 'json-rules-engine'
 import FileUtils  from './utils/fileUtils'
-import { RuleRepository } from './ruleRepository';
+import { RuleRepository, JSONRuleRepository, ExpressionRuleRepository } from './ruleRepository';
 
 export class FirmwareRuleEngineProcessor {
 
   private readonly facts: any;
   private readonly ruleRepository: RuleRepository;
 
-  constructor(factsPath: string, rulesFilePath: string) {
+  constructor(factsPath: string, rulesFilePath: string, expressionFilePath: string) {
     this.facts = FileUtils.loadFile(factsPath);
-    this.ruleRepository = new RuleRepository(rulesFilePath);
+    if(rulesFilePath){
+      this.ruleRepository = new JSONRuleRepository(rulesFilePath);
+    } else if(expressionFilePath) {
+      this.ruleRepository = new ExpressionRuleRepository(expressionFilePath);
+    } else {
+      throw new Error('No valid rules defined.');
+    }
   }
 
   async process(): Promise<any> {
@@ -29,8 +35,11 @@ export class FirmwareRuleEngineProcessor {
       rules.map(ruleEventPair => {
         console.log('------------------------------------------------------------------------');
         console.log(`Adding rule: ${JSON.stringify(ruleEventPair.name)}`);
+        console.log(` Priority: ${JSON.stringify(ruleEventPair.priority)}`);
 
         ruleEngine.addRule({
+          name: ruleEventPair.name,
+          priority: ruleEventPair.priority,
           conditions: ruleEventPair.rules,
           event: ruleEventPair.event
         });
@@ -43,6 +52,7 @@ export class FirmwareRuleEngineProcessor {
         console.log('========================================================================');
         console.log(`FACT: ${JSON.stringify(fact)}`);
         console.log('------------------------------------------------------------------------');
+        console.log(`RAW RESULT: ${JSON.stringify(results)}`);
         console.log(`# OF RESULTS: ${results.events.length}`);
         console.log(`RESULTS: ${JSON.stringify(results.events, null, 2)}`);
 

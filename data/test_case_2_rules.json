@@ -63,7 +63,7 @@
               "fact": "country",
               "operator": "equal",
               "value": "NL"
-            },
+             },
             {
               "fact": "country",
               "operator": "equal",
