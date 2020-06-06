@@ -24,3 +24,9 @@ clear && node --require ts-node/register src/index.ts -f ./data/test_case_3_fact
 clear && node --require ts-node/register src/index.ts -f ./data/test_case_4_facts.json -r ./data/test_case_4_rules.json
 ```
 
+## 5 - Expression in simpler form
+
+```sh
+clear && node --require ts-node/register src/index.ts -f ./data/test_case_1_facts.json -e ./data/expression_rules.json
+```
+
