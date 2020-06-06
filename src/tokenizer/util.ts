@@ -15,7 +15,6 @@ export function isNumber(v): boolean {
   return !isNaN(parseFloat(v)) && isFinite(v);
 }
 
-
 export function isOperator(v): boolean {
   for (let i = 0; i < operators.length; i++) {
     if (operators[i] === v) return true;

@@ -5,10 +5,10 @@ describe('Tokenizer', () => {
     beforeEach(() => {
     });
 
-    it.only('Should return correct response for expression $deviceGroup=\'ABC143\'', () => {
+    it.skip('Should return correct response for expression $deviceGroup=\'ABC143\'', () => {
       // const rule = '123-4';
       // const rule = "$deviceGroup='ABC143'";
-      const rule = "deviceGroup='ABC143'";
+      const rule = "$deviceGroup='ABC143' | $deviceType='TV'";
 
       console.log(`RULE: ${rule}`);
       const tokens = Token.getInst().tokenize(rule);
