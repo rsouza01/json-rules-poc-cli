@@ -5,7 +5,7 @@ describe('Tokenizer', () => {
     beforeEach(() => {
     });
 
-    it.skip('Should return correct response for expression $deviceGroup=\'ABC143\'', () => {
+    it('Should return correct response for expression $deviceGroup=\'ABC143\'', () => {
       // const rule = '123-4';
       // const rule = "$deviceGroup='ABC143'";
       const rule = "$deviceGroup='ABC143' | $deviceType='TV'";

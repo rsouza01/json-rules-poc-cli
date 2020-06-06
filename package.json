@@ -11,7 +11,7 @@
     "deploy": "npm run compile;",
     "eslint:run": "eslint './src/**/*.{ts,tsx}'",
     "eslint:fix": "eslint './src/**/*.{ts,tsx}' --fix",
-    "test": "npm run tests:unit",
+    "test": "clear; npm run tests:unit",
     "tests:unit": "npx mocha --recursive -r ts-node/register ./test/**/*.unit.ts"
   },
   "author": "Rodrigo de Souza <rsouza01@gmail.com>",

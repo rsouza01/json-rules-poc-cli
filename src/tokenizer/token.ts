@@ -47,15 +47,11 @@ export class Token {
 
   tokenize(str: string): [] {
     str = str.trim();
-    console.log(`>> str = ${str}`);
+
     var s = '';
     for (var index = 0; index < str.length; index++) {
       s += str[index];
       const peek = str[index + 1];
-
-      console.log(`>> s[${index}] = ${s}`);
-      console.log(`>> peek = ${peek}`);
-      console.log(`>> tokens = ${JSON.stringify(this.tokens, null, 2)}`);
 
       if (isVariable(s.trim()) && !isVariable(peek)) {
         this.tokens.push({ type: 'VAR', value: s.trim() });
