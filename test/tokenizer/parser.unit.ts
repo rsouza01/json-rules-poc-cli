@@ -68,4 +68,13 @@ describe('Parser', () => {
 
     expect(astRet).to.be.eql(ast);
   });
+
+  it.only('Must throw exception for rule  incorrectly defined - $deviceGroup<>\'ABC143\'', async () => {
+    const rule = "$deviceGroup<>'ABC143'";
+    const astRet = new Parser().parse(rule);
+
+    console.log(`>>> astRet2: ${JSON.stringify(astRet, null, 2)}`);
+
+    // expect(astRet).to.be.eql(ast);
+  });
 });
