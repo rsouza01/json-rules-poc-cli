@@ -16,6 +16,12 @@
 npm install
 ```
 
+## Test
+
+```sh
+npm test
+```
+
 ## Author
 
 👤 **Rodrigo de Souza <rsouza01@gmail.com>**
