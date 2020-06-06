@@ -1,6 +1,6 @@
 import { Token } from '../../src/tokenizer/token';
 
-describe('Tokenizer', () => {
+describe.skip('Tokenizer', () => {
   describe('Called with valid rules', () => {
     beforeEach(() => {
     });

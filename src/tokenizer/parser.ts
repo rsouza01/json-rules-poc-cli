@@ -29,7 +29,7 @@ export class Parser {
     current() { return this.tokens[this.index] }
 
     parse(str) {
-        const tokenizer = Token.getInst();
+        const tokenizer = new Token();
         this.tokens = tokenizer.tokenize(str);
 
         // console.log(`TOKENS: ${JSON.stringify(this.tokens, null, 2)}`);
@@ -40,9 +40,7 @@ export class Parser {
               this.expr.push(expr);
             }
         }
-
-        console.log(`EXPR: ${JSON.stringify(this.expr, null, 2)}`);
-
+        // console.log(`EXPR: ${JSON.stringify(this.expr, null, 2)}`);
         return this.expr;
     }
 
@@ -75,6 +73,9 @@ export class Parser {
 
     all() {
         const left = this.primary();
+
+        // console.log(`>>> LEFT: ${JSON.stringify(left, null, 2)}`);
+
         switch (this.current().value) {
             case '>=':
                 this.advance();
@@ -109,8 +110,6 @@ export class Parser {
     primary() {
         const curr = this.current();
         this.advance();
-
-        console.log(`CURR.TYPE = ${curr.type}`);
 
         if (curr.type === 'NUM') {
           return new Literal(curr.value);
