@@ -10,7 +10,7 @@
  */
 
 
-export class Visitor {
+export default class Visitor {
   visitBinary(ctx) {
     const type = ctx.operator;
     switch (type) {

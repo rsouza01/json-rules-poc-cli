@@ -3,7 +3,6 @@
     "baseUrl": ".",
     "sourceMap": true,
     "target": "es2017",
-    "moduleResolution": "node",
     "lib": [
       "esnext"
     ],

@@ -1,4 +1,4 @@
-import { isNum, isOp } from './util';
+import { isNumber, isOperator, isVariable, isVariableValue } from './util';
 
 export class Token {
   static inst: Token = null;
@@ -15,13 +15,57 @@ export class Token {
     return this.inst;
   }
 
-  tokenize(str: string): [] {
+  numeric_tokenize(str: string): [] {
     str = str.trim();
     var s = '';
     for (var index = 0; index < str.length; index++) {
       s += str[index];
       const peek = str[index + 1];
-      if (isNum(s.trim()) && !isNum(peek)) {
+      if (isNumber(s.trim()) && !isNumber(peek)) {
+        this.tokens.push({ type: 'NUM', value: s.trim() });
+        s = '';
+      }
+      if (s.trim() == '(' || s.trim() == ')') {
+        s.trim() == '(' ? this.tokens.push({ type: 'LPAREN' }) : this.tokens.push({ tyeratorpe: 'RPAREN' });
+        s = '';
+      }
+      if (isOperator(s.trim()) && !isOperator(peek)) {
+        this.tokens.push({ type: 'OP', value: s.trim() });
+        s = '';
+      }
+      if (s == ';' || s == '\n') {
+        this.tokens.push({ type: 'EOL' });
+          s = '';
+      }
+      if (index == (str.length - 1)) {
+        this.tokens.push({ type: 'EOF' });
+        s = '';
+      }
+    }
+    return this.tokens;
+  }
+
+  tokenize(str: string): [] {
+    str = str.trim();
+    console.log(`>> str = ${str}`);
+    var s = '';
+    for (var index = 0; index < str.length; index++) {
+      s += str[index];
+      const peek = str[index + 1];
+
+      console.log(`>> s[${index}] = ${s}`);
+      console.log(`>> peek = ${peek}`);
+      console.log(`>> tokens = ${JSON.stringify(this.tokens, null, 2)}`);
+
+      if (isVariable(s.trim()) && !isVariable(peek)) {
+        this.tokens.push({ type: 'VAR', value: s.trim() });
+        s = '';
+      }
+      if (isVariableValue(s.trim()) && !isVariableValue(peek)) {
+        this.tokens.push({ type: 'VAR_VALUE', value: s.trim() });
+        s = '';
+      }
+      if (isNumber(s.trim()) && !isNumber(peek)) {
         this.tokens.push({ type: 'NUM', value: s.trim() });
         s = '';
       }
@@ -29,7 +73,7 @@ export class Token {
         s.trim() == '(' ? this.tokens.push({ type: 'LPAREN' }) : this.tokens.push({ type: 'RPAREN' });
         s = '';
       }
-      if (isOp(s.trim()) && !isOp(peek)) {
+      if (isOperator(s.trim()) && !isOperator(peek)) {
         this.tokens.push({ type: 'OP', value: s.trim() });
         s = '';
       }

@@ -1,5 +1,5 @@
 import FileUtils  from './utils/fileUtils'
-import {Token} from './tokenizer/token'
+import { Token } from './tokenizer/token'
 import { Parser } from './tokenizer/parser'
 import { Evaluator } from './tokenizer/evaluator';
 

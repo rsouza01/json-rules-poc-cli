@@ -10,7 +10,7 @@
  */
 
 
-export class RuleVisitor {
+export default class RuleVisitor {
   visitBinary(ctx) {
     const type = ctx.operator;
     switch (type) {
