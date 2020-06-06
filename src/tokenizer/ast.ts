@@ -28,6 +28,30 @@ export class Literal {
   }
 }
 
+export class Variable {
+  private value: any;
+
+  constructor(value) {
+      this.value = value;
+  }
+
+  visit(visitor) {
+      return visitor.visitVariable(this);
+  }
+}
+
+export class VariableValue {
+  private value: any;
+
+  constructor(value) {
+      this.value = value;
+  }
+
+  visit(visitor) {
+      return visitor.visitVariableValue(this);
+  }
+}
+
 export class Grouping {
   private expr: any;
 

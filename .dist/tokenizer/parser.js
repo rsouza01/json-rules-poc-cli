@@ -1,60 +1,43 @@
 import { Token } from './token';
-import { Binary, Literal, Variable, VariableValue, Grouping }  from './ast';
-
+import { Binary, Literal, Grouping } from './ast';
 export class Parser {
-  static inst: any;
-  private index: any;
-  private tokens: any;
-  private expr: any;
-
-  constructor() {
+    constructor() {
         this.index = 0;
         this.tokens = null;
         this.expr = [];
     }
-
     static getInst() {
-      if (!this.inst) {
-        this.inst = new Parser()
-      }
-      return this.inst;
+        if (!this.inst) {
+            this.inst = new Parser();
+        }
+        return this.inst;
     }
-
     advance() {
         this.index++;
     }
-
-    peep() { return this.tokens(this.index + 1) }
-
-    current() { return this.tokens[this.index] }
-
+    peep() { return this.tokens(this.index + 1); }
+    current() { return this.tokens[this.index]; }
     parse(str) {
         const tokenizer = Token.getInst();
         this.tokens = tokenizer.tokenize(str);
-
-        // console.log(`TOKENS: ${JSON.stringify(this.tokens, null, 2)}`);
-
+        console.log(`TOKENS: ${JSON.stringify(this.tokens, null, 2)}`);
         while (this.current().type != 'EOF') {
             const expr = this.add();
             if (expr) {
-              this.expr.push(expr);
+                this.expr.push(expr);
             }
         }
-
         console.log(`EXPR: ${JSON.stringify(this.expr, null, 2)}`);
-
         return this.expr;
     }
-
     add() {
-      const left = this.sub();
-      if (this.current().value === '+') {
-          this.advance();
-          return new Binary(left, 'ADD', this.sub());
-      }
-      return left;
+        const left = this.sub();
+        if (this.current().value === '+') {
+            this.advance();
+            return new Binary(left, 'ADD', this.sub());
+        }
+        return left;
     }
-
     sub() {
         const left = this.mul();
         if (this.current().value == '-') {
@@ -63,7 +46,6 @@ export class Parser {
         }
         return left;
     }
-
     mul() {
         const left = this.all();
         if (this.current().value == '*') {
@@ -72,7 +54,6 @@ export class Parser {
         }
         return left;
     }
-
     all() {
         const left = this.primary();
         switch (this.current().value) {
@@ -95,39 +76,27 @@ export class Parser {
                 this.advance();
                 return new Binary(left, 'BANG_EQUAL', this.add());
             case '|':
-              this.advance();
-              return new Binary(left, 'OR', this.add());
+                this.advance();
+                return new Binary(left, 'OR', this.add());
             case '&':
-              this.advance();
-              return new Binary(left, 'AND', this.add());
+                this.advance();
+                return new Binary(left, 'AND', this.add());
             default:
                 break;
         }
-        return left
+        return left;
     }
-
     primary() {
         const curr = this.current();
         this.advance();
-
-        console.log(`CURR.TYPE = ${curr.type}`);
-
-        if (curr.type === 'NUM') {
-          return new Literal(curr.value);
+        if (curr.type == 'NUM') {
+            return new Literal(curr.value);
         }
-
-        if (curr.type === 'VAR') {
-          return new Variable(curr.value);
-        }
-
-        if (curr.type === 'VAR_VALUE') {
-          return new VariableValue(curr.value);
-        }
-
-        if (curr.type === 'LPAREN') {
+        if (curr.type == 'LPAREN') {
             const expr = this.add();
             this.advance();
             return new Grouping(expr);
         }
     }
 }
+//# sourceMappingURL=parser.js.map

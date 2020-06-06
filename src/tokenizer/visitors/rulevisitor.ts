@@ -34,6 +34,8 @@ export default class RuleVisitor {
         return ctx.left.visit(this) === ctx.right.visit(this);
       case 'BANG_EQUAL':
         return ctx.left.visit(this) !== ctx.right.visit(this);
+      default:
+        throw new Error('TOKEN NOT RECOGNIZED');
     }
   }
 

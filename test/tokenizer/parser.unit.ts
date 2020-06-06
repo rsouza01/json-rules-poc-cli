@@ -2,6 +2,7 @@ import { Parser } from '../../src/tokenizer/parser';
 import { Token } from '../../src/tokenizer/token';
 
 describe('Parser', () => {
+  const rule = "$deviceGroup='ABC143'";
   const ruleOR = "$deviceGroup='ABC143' | $deviceType='TV'";
 
   const validTokensOR = [
@@ -37,11 +38,24 @@ describe('Parser', () => {
       type: 'EOF'
     }
   ];
-
+  /*
+AST: [
+  {
+    "left": {
+      "value": "12"
+    },
+    "right": {
+      "value": "3"
+    },
+    "operator": "ADD"
+  }
+]
+*/
 
   describe('Parser', () => {
-    it('Parse rule correctly defined - $deviceGroup=\'ABC143\' | $deviceType=\'TV\'', () => {
-      const ast = new Parser().parse(ruleOR);
+    it.only('Parse rule correctly defined - $deviceGroup=\'ABC143\'', () => {
+      const ast = new Parser().parse(rule);
+      // const ast = new Parser().parse('12+3');
       console.log(`AST: ${JSON.stringify(ast, null, 2)}`);
     });
   });
