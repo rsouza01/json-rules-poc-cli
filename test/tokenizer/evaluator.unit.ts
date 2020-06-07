@@ -36,7 +36,7 @@ describe('Evaluator', () => {
   });
 
 
-  it.only('Parse rule correctly defined - ($deviceGroup=\'ABC143\') | ($deviceType=\'TV\')', async () => {
+  it('Parse rule correctly defined - ($deviceGroup=\'ABC143\') | ($deviceType=\'TV\')', async () => {
 
     /** TODO: Should be mocked - Quick and dirty approach for now */
     const rule: string = "($deviceGroup='ABC143') | ($deviceType='TV')";
