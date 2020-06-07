@@ -46,7 +46,7 @@ describe('Evaluator', () => {
 
     const evalRet: any[] = new Evaluator(ast, new RuleVisitor()).evaluate();
     // expect(evalRet).to.be.eql(evalValue);
-    console.log(`EVAL_RET: ${JSON.stringify(evalRet, null, 2)}`);
+    // console.log(`EVAL_RET: ${JSON.stringify(evalRet, null, 2)}`);
     // console.log('------------------------------------------------------------------------');
   });
 });

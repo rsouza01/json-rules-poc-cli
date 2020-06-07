@@ -87,7 +87,7 @@ export default class RuleVisitor {
   }
 
   visitExpressions(expressions): any {
-    console.log(`EXPRESSIONS: ${JSON.stringify(expressions, null, 2)}`);
+    // console.log(`EXPRESSIONS: ${JSON.stringify(expressions, null, 2)}`);
     const result: any[] = [];
 
     for (const expr of expressions) {
