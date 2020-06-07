@@ -9,38 +9,76 @@
  *  ! -
  */
 
+import { realpathSync } from "fs";
+
+function buildFact(fact, operator, value) {
+  return {
+    fact,
+    operator,
+    value,
+  };
+}
 
 export default class RuleVisitor {
   visitBinary(ctx) {
-    const type = ctx.operator;
-    switch (type) {
-      case 'ADD':
-        return ctx.left.visit(this) + ctx.right.visit(this);
-      case 'SUB':
-        return ctx.left.visit(this) - ctx.right.visit(this);
-      case 'MUL':
-        return ctx.left.visit(this) * ctx.right.visit(this);
-      case 'DIV':
-        return ctx.left.visit(this) / ctx.right.visit(this);
-      case 'LESS_THAN':
-        return ctx.left.visit(this) < ctx.right.visit(this);
-      case 'GREATER_THAN':
-        return ctx.left.visit(this) > ctx.right.visit(this);
-      case 'LESS_EQUAL':
-        return ctx.left.visit(this) <= ctx.right.visit(this);
-      case 'GREATER_EQUAL':
-        return ctx.left.visit(this) >= ctx.right.visit(this);
-      case 'EQUAL_EQUAL':
-        return ctx.left.visit(this) === ctx.right.visit(this);
-      case 'BANG_EQUAL':
-        return ctx.left.visit(this) !== ctx.right.visit(this);
+    let operator: string = "";
+
+    switch (ctx.operator) {
+      case "ADD":
+        operator = "plus";
+        break;
+      case "SUB":
+        operator = "sub";
+        break;
+      case "MUL":
+        operator = "mul";
+        break;
+      case "DIV":
+        operator = "div";
+        break;
+      case "LESS_THAN":
+        operator = "lessThan";
+        break;
+      case "GREATER_THAN":
+        operator = "greaterThan";
+        break;
+      case "LESS_EQUAL":
+        operator = "lessEqualThan";
+        break;
+      case "GREATER_EQUAL":
+        operator = "greaterEqualThan";
+        break;
+      case "EQUAL_EQUAL":
+        operator = "equals";
+        break;
+      case "BANG_EQUAL":
+        operator = "different";
+        break;
+      case "OR":
+        operator = "any";
+        break;
+      case "AND":
+        operator = "all";
+        break;
       default:
-        throw new Error('TOKEN NOT RECOGNIZED');
+        console.error(
+          `OPERATOR NOT RECOGNIZED: \'${JSON.stringify(ctx.operator, null, 2)}\'`
+        );
+        throw new Error(`OPERATOR NOT RECOGNIZED: \'${JSON.stringify(ctx.operator, null, 2)}\'`);
     }
+    return buildFact(ctx.left.visit(this), operator, ctx.right.visit(this));
   }
 
   visitLiteral(ctx) {
     return Number(ctx.value);
+  }
+
+  visitVariable(ctx) {
+    return String(ctx.value);
+  }
+
+  visitVariableValue(ctx) {
+    return String(ctx.value);
   }
 
   visitGrouping(expr) {
@@ -48,10 +86,14 @@ export default class RuleVisitor {
     return e.visit(this);
   }
 
-  visitExpressions(expressions) {
+  visitExpressions(expressions): any {
+    console.log(`EXPRESSIONS: ${JSON.stringify(expressions, null, 2)}`);
+    const result: any[] = [];
+
     for (const expr of expressions) {
-      console.log(`expr: ${JSON.stringify(expr)}`);
-      console.log(`expr.visit: ${JSON.stringify(expr.visit(this))}`);
+      result.push(expr.visit(this));
     }
+
+    return result;
   }
 }
