@@ -11,45 +11,61 @@
 
 import { realpathSync } from "fs";
 
-
 function buildFact(fact, operator, value) {
   return {
     fact,
     operator,
-    value
+    value,
   };
 }
 
-
 export default class RuleVisitor {
   visitBinary(ctx) {
-    let operator: string = '';
+    let operator: string = "";
 
     switch (ctx.operator) {
-      case 'ADD':
-        operator = 'plus'; break;
-      case 'SUB':
-        operator = 'sub'; break;
-      case 'MUL':
-        operator = 'mul'; break;
-      case 'DIV':
-        operator = 'div'; break;
-      case 'LESS_THAN':
-        operator = 'lessThan'; break;
-      case 'GREATER_THAN':
-        operator = 'greaterThan'; break;
-      case 'LESS_EQUAL':
-        operator = 'lessEqualThan'; break;
-      case 'GREATER_EQUAL':
-        operator = 'greaterEqualThan'; break;
-      case 'EQUAL_EQUAL':
-        operator = 'equals'; break;
-      case 'BANG_EQUAL':
-        operator = 'different'; break;
+      case "ADD":
+        operator = "plus";
+        break;
+      case "SUB":
+        operator = "sub";
+        break;
+      case "MUL":
+        operator = "mul";
+        break;
+      case "DIV":
+        operator = "div";
+        break;
+      case "LESS_THAN":
+        operator = "lessThan";
+        break;
+      case "GREATER_THAN":
+        operator = "greaterThan";
+        break;
+      case "LESS_EQUAL":
+        operator = "lessEqualThan";
+        break;
+      case "GREATER_EQUAL":
+        operator = "greaterEqualThan";
+        break;
+      case "EQUAL_EQUAL":
+        operator = "equals";
+        break;
+      case "BANG_EQUAL":
+        operator = "different";
+        break;
+      case "OR":
+        operator = "any";
+        break;
+      case "AND":
+        operator = "all";
+        break;
       default:
-        throw new Error('TOKEN NOT RECOGNIZED');
+        console.error(
+          `OPERATOR NOT RECOGNIZED: \'${JSON.stringify(ctx.operator, null, 2)}\'`
+        );
+        throw new Error(`OPERATOR NOT RECOGNIZED: \'${JSON.stringify(ctx.operator, null, 2)}\'`);
     }
-
     return buildFact(ctx.left.visit(this), operator, ctx.right.visit(this));
   }
 
@@ -71,8 +87,8 @@ export default class RuleVisitor {
   }
 
   visitExpressions(expressions): any {
-    // console.log(`expr: ${JSON.stringify(expressions, null, 2)}`);
-    const result : any[] = [];
+    console.log(`EXPRESSIONS: ${JSON.stringify(expressions, null, 2)}`);
+    const result: any[] = [];
 
     for (const expr of expressions) {
       result.push(expr.visit(this));
