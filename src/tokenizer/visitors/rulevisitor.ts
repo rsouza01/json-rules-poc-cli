@@ -9,38 +9,60 @@
  *  ! -
  */
 
+import { realpathSync } from "fs";
+
+
+function buildFact(fact, operator, value) {
+  return {
+    fact,
+    operator,
+    value
+  };
+}
+
 
 export default class RuleVisitor {
   visitBinary(ctx) {
-    const type = ctx.operator;
-    switch (type) {
+    let operator: string = '';
+
+    switch (ctx.operator) {
       case 'ADD':
-        return ctx.left.visit(this) + ctx.right.visit(this);
+        operator = 'plus'; break;
       case 'SUB':
-        return ctx.left.visit(this) - ctx.right.visit(this);
+        operator = 'sub'; break;
       case 'MUL':
-        return ctx.left.visit(this) * ctx.right.visit(this);
+        operator = 'mul'; break;
       case 'DIV':
-        return ctx.left.visit(this) / ctx.right.visit(this);
+        operator = 'div'; break;
       case 'LESS_THAN':
-        return ctx.left.visit(this) < ctx.right.visit(this);
+        operator = 'lessThan'; break;
       case 'GREATER_THAN':
-        return ctx.left.visit(this) > ctx.right.visit(this);
+        operator = 'greaterThan'; break;
       case 'LESS_EQUAL':
-        return ctx.left.visit(this) <= ctx.right.visit(this);
+        operator = 'lessEqualThan'; break;
       case 'GREATER_EQUAL':
-        return ctx.left.visit(this) >= ctx.right.visit(this);
+        operator = 'greaterEqualThan'; break;
       case 'EQUAL_EQUAL':
-        return ctx.left.visit(this) === ctx.right.visit(this);
+        operator = 'equals'; break;
       case 'BANG_EQUAL':
-        return ctx.left.visit(this) !== ctx.right.visit(this);
+        operator = 'different'; break;
       default:
         throw new Error('TOKEN NOT RECOGNIZED');
     }
+
+    return buildFact(ctx.left.visit(this), operator, ctx.right.visit(this));
   }
 
   visitLiteral(ctx) {
     return Number(ctx.value);
+  }
+
+  visitVariable(ctx) {
+    return String(ctx.value);
+  }
+
+  visitVariableValue(ctx) {
+    return String(ctx.value);
   }
 
   visitGrouping(expr) {
@@ -48,10 +70,14 @@ export default class RuleVisitor {
     return e.visit(this);
   }
 
-  visitExpressions(expressions) {
+  visitExpressions(expressions): any {
+    // console.log(`expr: ${JSON.stringify(expressions, null, 2)}`);
+    const result : any[] = [];
+
     for (const expr of expressions) {
-      console.log(`expr: ${JSON.stringify(expr)}`);
-      console.log(`expr.visit: ${JSON.stringify(expr.visit(this))}`);
+      result.push(expr.visit(this));
     }
+
+    return result;
   }
 }
