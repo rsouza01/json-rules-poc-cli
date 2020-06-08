@@ -2,6 +2,7 @@ import FileUtils  from './utils/fileUtils'
 import { Token } from './tokenizer/token'
 import { Parser } from './tokenizer/parser'
 import { Evaluator } from './tokenizer/evaluator';
+import RuleVisitor from './tokenizer/visitors/rulevisitor';
 
 
 export interface RuleRepository {
@@ -31,30 +32,24 @@ export class ExpressionRuleRepository implements RuleRepository {
   private readonly rules: any;
 
   constructor(rulesFilePath: string) {
-    this.rules = FileUtils.loadFile(rulesFilePath);
+    const rulesFromFile = FileUtils.loadFile(rulesFilePath);
+
+    console.log(`RULES_FROM_CONF: ${JSON.stringify(rulesFromFile , null, 2)}`);
+
+    // this.rules = rulesFromFile.map((userRule: any) => {
+    //   console.log(`USER_RULE: ${JSON.stringify(userRule.rule_expression, null, 2)}`);
+    //   const ast = new Parser().parse(userRule.rule_expression);
+    //   const evalRet = new Evaluator(ast, new RuleVisitor()).evaluate();
+    //   console.log(`EVAL_RET: ${JSON.stringify(evalRet, null, 2)}`);
+    //   console.log('------------------------------------------------------------------------');
+    // });
+
+    console.log(`RULES: ${JSON.stringify(this.rules , null, 2)}`);
+
   }
 
   async loadRules(fact: any): Promise<any> {
 
-    // const rule = '89 * 78 & 1 + 2';
-    // const rule = this.rules[0].rule_expression
-    // const rule = "$deviceGroup='ABC143' and $deviceType='TV' and $country in ['NL', 'BE']",
-    const rule = "$deviceGroup='ABC143'";
-
-    console.log(`RULE: ${rule}`);
-    const tokens = Token.getInst().tokenize(rule);
-    console.log(`TOKENS: ${JSON.stringify(tokens, null, 2)}`);
-    console.log('------------------------------------------------------------------------');
-
-    const ast = new Parser().parse(rule);
-
-    console.log(`AST: ${JSON.stringify(ast, null, 2)}`);
-    console.log('------------------------------------------------------------------------');
-
-    const evalRet = new Evaluator(ast).evaluate();
-    console.log(`EVAL_RET: ${JSON.stringify(evalRet, null, 2)}`);
-    console.log('------------------------------------------------------------------------');
-
-    return [];
+    return this.rules;
   }
 }
