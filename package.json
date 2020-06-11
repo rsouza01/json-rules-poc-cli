@@ -14,6 +14,7 @@
     "eslint:run": "eslint './src/**/*.{ts,tsx}'",
     "eslint:fix": "eslint './src/**/*.{ts,tsx}' --fix",
     "test": "clear; npm run tests:unit",
+    "coverage": "nyc mocha --require ts-node/register --require source-map-support/register --timeout 120000 --reporter xunit --reporter-options output=reports/test-results.xml --full-trace --bail test/**/*.ts test/**/**/*.ts test/**/**/**/*.ts",
     "tests:unit": "npx mocha --recursive -r ts-node/register ./test/**/*.unit.ts"
   },
   "author": "Rodrigo de Souza <rsouza01@gmail.com>",

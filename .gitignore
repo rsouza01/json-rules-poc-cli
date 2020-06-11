@@ -5,4 +5,14 @@ reports
 node_modules
 configuration.json
 service.json
-dbs-mdm-*.json
+
+
+.vscode/*
+.webpack/*
+.build/*
+coverage/*
+.nyc_output/*
+.serverless/*
+dbs-subscribers-*
+
+nodemon.json
