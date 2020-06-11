@@ -49,7 +49,7 @@ export default class RuleVisitor {
         operator = "greaterEqualThan";
         break;
       case "EQUAL_EQUAL":
-        operator = "equals";
+        operator = "equal";
         break;
       case "BANG_EQUAL":
         operator = "different";
