@@ -2,6 +2,10 @@ import engineFactory, { Engine } from 'json-rules-engine'
 import FileUtils  from './utils/fileUtils'
 import { RuleRepository, JSONRuleRepository, ExpressionRuleRepository } from './ruleRepository';
 
+const engineOptions = {
+  allowUndefinedFacts: true
+};
+
 export class FirmwareRuleEngineProcessor {
 
   private readonly facts: any;
@@ -30,14 +34,15 @@ export class FirmwareRuleEngineProcessor {
         console.log(`ORG:${fact.organization}, PROPOSITION:${fact.proposition} => ${rules.length} rules loadded.`);
       }
 
-      const ruleEngine: Engine = new Engine();
+      const ruleList = [];
 
       rules.map(ruleEventPair => {
         console.log('------------------------------------------------------------------------');
         console.log(`Adding rule: ${JSON.stringify(ruleEventPair.name)}`);
         console.log(` Priority: ${JSON.stringify(ruleEventPair.priority)}`);
 
-        ruleEngine.addRule({
+        // ruleEngine.addRule({
+        ruleList.push({
           name: ruleEventPair.name,
           priority: ruleEventPair.priority,
           conditions: ruleEventPair.rules,
@@ -45,6 +50,9 @@ export class FirmwareRuleEngineProcessor {
         });
       });
       console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<');
+
+      const ruleEngine: Engine = new Engine(ruleList, engineOptions);
+
 
       ruleEngine
       .run(fact)

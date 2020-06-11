@@ -8,6 +8,7 @@
     "clean": "rm -rf reports/ .webpack/ dist/ .nyc_output/",
     "compile": "npx webpack --config webpack.config.js",
     "exec": "node --require ts-node/register src/index.ts -f ./data/facts.json -r ./data/rules.json",
+    "exec:6": "node --require ts-node/register src/index.ts -f ./data/test_case_6_facts.json -r ./data/test_case_6_rules.json",
     "exec:expr": "clear; node --require ts-node/register src/index.ts -f ./data/expression_facts.json -e ./data/expression_rules.json",
     "deploy": "npm run compile;",
     "eslint:run": "eslint './src/**/*.{ts,tsx}'",

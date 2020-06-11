@@ -1,4 +1,3 @@
-// ast.js
 
 export class Binary {
   private left: any;

@@ -3,7 +3,7 @@
     "id": "1",
     "organization" : 1,
     "proposition" : 1,
-    "deviceType": "TV",
+    "$deviceType": "TV",
     "$deviceGroup": "ABC143",
     "averageTemperature": 25,
     "country": "NL",

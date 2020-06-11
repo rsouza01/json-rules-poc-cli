@@ -24,7 +24,7 @@ describe('Evaluator', () => {
     const evalValue: any[] = [
       {
         "fact": "$deviceGroup",
-        "operator": "equals",
+        "operator": "equal",
         "value": "'ABC143'"
       }
     ];

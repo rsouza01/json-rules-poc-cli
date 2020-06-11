@@ -1,0 +1,44 @@
+[
+  {
+    "organization" : 1,
+    "proposition" : 1,
+    "name" : "ORG_1_PROP_1_NL_BE",
+    "rules" : {
+      "all": [
+        {
+          "fact": "$deviceGroup",
+          "operator": "equal",
+          "value": "ABC143"
+        },
+          {
+          "fact": "$deviceType",
+          "operator": "equal",
+          "value": "TV"
+        },
+        {
+          "any": [
+            {
+              "fact": "country",
+              "operator": "equal",
+              "value": "NL"
+            },
+            {
+              "fact": "country",
+              "operator": "equal",
+              "value": "BE"
+            }
+          ]
+        }
+      ]
+    },
+    "event": {
+      "type": "fdrid-list",
+      "params": {
+        "fdrids": [
+          "NLNLNLNLNLNL-NLNLNLNLNLNL",
+          "BEBEBEBEBEBE-BEBEBEBEBEBE"
+        ]
+      }
+    }
+  }
+]
