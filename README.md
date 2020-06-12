@@ -44,5 +44,3 @@ Give a ⭐️ if this project helped you!
 * https://github.com/philipszdavido/expr_parser_js
 
 
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
