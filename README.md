@@ -3,6 +3,7 @@
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+    <a href="https://lgtm.com/projects/g/rsouza01/json-rules-poc-cli/context:javascript"><img alt="Language grade: JavaScript" src="https://img.shields.io/lgtm/grade/javascript/g/rsouza01/json-rules-poc-cli.svg?logo=lgtm&logoWidth=18"/></a>    
   </a>
 </p>
 
