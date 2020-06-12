@@ -52,7 +52,7 @@ export default class RuleVisitor {
         operator = "equal";
         break;
       case "BANG_EQUAL":
-        operator = "different";
+        operator = "notEqual";
         break;
       case "OR":
         operator = "any";

@@ -39,9 +39,7 @@ export class FirmwareRuleEngineProcessor {
       rules.map(ruleEventPair => {
         console.log('------------------------------------------------------------------------');
         console.log(`Adding rule: ${JSON.stringify(ruleEventPair.name)}`);
-        console.log(` Priority: ${JSON.stringify(ruleEventPair.priority)}`);
 
-        // ruleEngine.addRule({
         ruleList.push({
           name: ruleEventPair.name,
           priority: ruleEventPair.priority,

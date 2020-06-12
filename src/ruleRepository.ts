@@ -51,7 +51,7 @@ export class ExpressionRuleRepository implements RuleRepository {
 
   buildRule(userRule: any, translatedRule: any): Promise<any> {
     // console.log(`>>> USER RULE: ${JSON.stringify(userRule, null, 2)}`);
-    // console.log(`>>> TRANSLATED RULE: ${JSON.stringify(translatedRule, null, 2)}`);
+    console.log(`>>> TRANSLATED RULE: ${JSON.stringify(translatedRule, null, 2)}`);
 
     userRule.rules = {
       all: [],

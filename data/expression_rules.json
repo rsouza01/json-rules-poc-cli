@@ -2,14 +2,27 @@
   {
     "organization" : 1,
     "proposition" : 1,
-    "name" : "ORG_1_PROP_1_NL_BE",
-    "rule_expression" : "$deviceGroup='ABC143'",
+    "name" : "ORG_1_PROP_1_TV",
+    "rule_expression" : "$deviceType='TV'",
     "event": {
       "type": "fdrid-list",
       "params": {
         "fdrids": [
-          "NLNLNLNLNLNL-NLNLNLNLNLNL",
-          "BEBEBEBEBEBE-BEBEBEBEBEBE"
+          "TV-TV"
+        ]
+      }
+    }
+  },
+  {
+    "organization" : 1,
+    "proposition" : 1,
+    "name" : "ORG_1_PROP_1_NOT_TV",
+    "rule_expression" : "$deviceType!='TV'",
+    "event": {
+      "type": "fdrid-list",
+      "params": {
+        "fdrids": [
+          "NOT-TV"
         ]
       }
     }
