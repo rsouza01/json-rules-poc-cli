@@ -1,11 +1,17 @@
 [
   {
-    "id": "1",
+    "$id": "1",
     "organization" : 1,
     "proposition" : 1,
     "$deviceType": "'TV'",
     "$deviceGroup": "ABC143",
     "averageTemperature": 15,
-    "country": "NL"
+    "country": "NL",
+    "customAttributes":  {
+      "screen-size-inches" : "47",
+      "power-voltage" : "220",
+      "display-type" : "LED",
+      "resolution" : "4K"
+    }
   }
 ]

@@ -5,7 +5,7 @@
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
     <img alt="Sonar" src="https://sonarcloud.io/api/project_badges/measure?project=rsouza01_json-rules-poc-cli&metric=alert_status" />
     <a href="https://lgtm.com/projects/g/rsouza01/json-rules-poc-cli/context:javascript">
-    <img alt="Language grade: JavaScript" src="https://img.shields.io/lgtm/grade/javascript/g/rsouza01/json-rules-poc-cli.svg?logo=lgtm&logoWidth=18"/></a>    
+    <img alt="Language grade: JavaScript" src="https://img.shields.io/lgtm/grade/javascript/g/rsouza01/json-rules-poc-cli.svg?logo=lgtm&logoWidth=18"/></a>
   </a>
 </p>
 
@@ -44,3 +44,7 @@ Give a ⭐️ if this project helped you!
 * https://github.com/philipszdavido/expr_parser_js
 
 
+### Syntax language agnostic parser
+
+* https://medium.com/@DmitrySoshnikov/syntax-language-agnostic-parser-generator-bd24468d7cfc
+* https://www.npmjs.com/package/syntax-cli
