@@ -47,7 +47,7 @@ export class FirmwareRuleEngineProcessor {
           event: ruleEventPair.event
         });
       });
-      console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<');
+      console.log('========================================================================');
 
       const ruleEngine: Engine = new Engine(ruleList, engineOptions);
 
@@ -58,7 +58,7 @@ export class FirmwareRuleEngineProcessor {
         console.log('========================================================================');
         console.log(`FACT: ${JSON.stringify(fact)}`);
         console.log('------------------------------------------------------------------------');
-        console.log(`RAW RESULT: ${JSON.stringify(results)}`);
+        // console.log(`RAW RESULT: ${JSON.stringify(results)}`);
         console.log(`# OF RESULTS: ${results.events.length}`);
         console.log(`RESULTS: ${JSON.stringify(results.events, null, 2)}`);
 

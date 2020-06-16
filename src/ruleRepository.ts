@@ -63,6 +63,10 @@ export class ExpressionRuleRepository implements RuleRepository {
   }
 
   async loadRules(fact: any): Promise<any> {
-    return this.rules;
+    return this.rules.filter(element => {
+      return element.organization !== undefined && element.proposition !== undefined &&
+        element.organization === fact.organization &&
+        element.proposition === fact.proposition;
+    });
   }
 }

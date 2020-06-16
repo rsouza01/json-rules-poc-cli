@@ -26,5 +26,19 @@
         ]
       }
     }
+  },
+  {
+    "organization" : 1,
+    "proposition" : 1,
+    "name" : "ORG_1_PROP_1_TEMP_BIGGER_25",
+    "rule_expression" : "averageTemperature > 20",
+    "event": {
+      "type": "fdrid-list",
+      "params": {
+        "fdrids": [
+          "TEMP-BIGGER-20"
+        ]
+      }
+    }
   }
 ]
