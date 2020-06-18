@@ -44,7 +44,12 @@ Give a ⭐️ if this project helped you!
 * https://github.com/philipszdavido/expr_parser_js
 
 
-### Syntax language agnostic parser
+### Syntax language parser
 
 * https://medium.com/@DmitrySoshnikov/syntax-language-agnostic-parser-generator-bd24468d7cfc
 * https://www.npmjs.com/package/syntax-cli
+* https://www.npmjs.com/package/nearley
+* https://nearley.js.org/docs/getting-started
+
+### JSON Logic
+* http://jsonlogic.com/

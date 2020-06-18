@@ -5,7 +5,7 @@
     "proposition" : 1,
     "$deviceType": "'TV'",
     "$deviceGroup": "ABC143",
-    "averageTemperature": 15,
+    "averageTemperature": 55,
     "country": "NL",
     "customAttributes":  {
       "screen-size-inches" : "47",
