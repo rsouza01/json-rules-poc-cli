@@ -1,4 +1,4 @@
-import { Token } from '../../src/tokenizer/token';
+import { Token } from '../../src/lib/tokenizer/token';
 
 describe.skip('Tokenizer', () => {
   describe('Called with valid rules', () => {

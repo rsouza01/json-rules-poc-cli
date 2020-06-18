@@ -1,8 +1,8 @@
 import FileUtils from './utils/fileUtils'
-import { Token } from './tokenizer/token'
-import { Parser } from './tokenizer/parser'
-import { Evaluator } from './tokenizer/evaluator';
-import RuleVisitor from './tokenizer/visitors/rulevisitor';
+import { Token } from './lib/tokenizer/token'
+import { Parser } from './lib/tokenizer/parser'
+import { Evaluator } from './lib/tokenizer/evaluator';
+import RuleVisitor from './lib/tokenizer/visitors/rulevisitor';
 
 
 export interface RuleRepository {

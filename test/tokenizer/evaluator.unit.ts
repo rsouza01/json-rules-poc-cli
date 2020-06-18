@@ -4,9 +4,9 @@ import {
 import * as chai from 'chai';
 
 import { doesNotThrow } from 'assert';
-import { Parser } from '../../src/tokenizer/parser';
-import { Evaluator } from '../../src/tokenizer/evaluator';
-import RuleVisitor from '../../src/tokenizer/visitors/rulevisitor';
+import { Parser } from '../../src/lib/tokenizer/parser';
+import { Evaluator } from '../../src/lib/tokenizer/evaluator';
+import RuleVisitor from '../../src/lib/tokenizer/visitors/rulevisitor';
 
 const { expect } = chai;
 

@@ -5,7 +5,7 @@ import * as chai from 'chai';
 
 import {
   isNumber, isOperator, isVariable, isVariableValue
-} from '../../src/tokenizer/util';
+} from '../../src/lib/tokenizer/util';
 
 const { expect } = chai;
 

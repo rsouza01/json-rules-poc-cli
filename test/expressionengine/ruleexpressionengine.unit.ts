@@ -4,14 +4,10 @@ import {
 import * as chai from 'chai';
 
 import { doesNotThrow } from 'assert';
-import { Parser } from '../../src/lib/tokenizer/parser';
-import { Token } from '../../src/lib/tokenizer/token';
-
 const { expect } = chai;
 
-
-describe('RuleVisitor', () => {
+describe('RuleExpressionEngine', () => {
   it('', async () => {
-
+    expect(true).to.be.eql(true);
   });
 });
