@@ -1,0 +1,48 @@
+[
+  {
+    "organization": 1,
+    "proposition": 1,
+    "name": "ORG_1_PROP_1",
+    "rules": {
+      "all": [
+        {
+          "fact": "fact",
+          "operator": "equal",
+          "value": "TV",
+          "path": "$.filterExpression.hsdpAttributes.groupName"
+        },
+        {
+          "fact": "fact",
+          "operator": "equal",
+          "value": "NL",
+          "path": "$.filterExpression.customAttributes.country"
+        },
+        {
+          "fact": "fact",
+          "operator": "in",
+          "value": [
+            9999,
+            2222,
+            3333
+          ],
+          "path": "$.filterExpression.customAttributes.serialNumber"
+        },
+        {
+          "fact": "fact",
+          "operator": "equal",
+          "value": "Dutch",
+          "path": "$.filterExpression.customAttributes.language"
+        }
+
+      ]
+    },
+    "event": {
+      "type": "fdrid-list",
+      "params": {
+        "fdrids": [
+          "TV"
+        ]
+      }
+    }
+  }
+]

@@ -39,3 +39,7 @@ clear && DEBUG=json-rules-engine node --require ts-node/register src/index.ts -f
 ```sh
 clear && DEBUG=json-rules-engine node --require ts-node/register src/index.ts -f ./data/test_case_8_facts.json -r ./data/test_case_8_rules.json
 ```
+
+```sh
+clear && DEBUG=json-rules-engine node --require ts-node/register src/index.ts -f ./data/test_case_9_facts.json -r ./data/test_case_9_rules.json
+```

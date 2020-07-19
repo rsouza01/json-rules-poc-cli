@@ -1,0 +1,17 @@
+[
+  {
+    "id": "1",
+    "organization": 1,
+    "proposition": 1,
+    "filterExpression": {
+      "hsdpAttributes": {
+        "groupName": "TV"
+      },
+      "customAttributes": {
+        "country": "NL",
+        "serialNumber": 9999,
+        "language": "Dutch"
+      }
+    }
+  }
+]

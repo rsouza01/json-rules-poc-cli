@@ -57,7 +57,8 @@ export class FirmwareRuleEngineProcessor {
       .run(fact)
       .then((results) => {
         console.log('========================================================================');
-        console.log(`FACT: ${JSON.stringify(fact, null, 2)}`);
+        // console.log(`FACT: ${JSON.stringify(fact, null, 2)}`);
+        console.log(`FACT: ${JSON.stringify(fact)}`);
         console.log('------------------------------------------------------------------------');
         // console.log(`RAW RESULT: ${JSON.stringify(results)}`);
         console.log(`# OF RESULTS: ${results.events.length}`);
