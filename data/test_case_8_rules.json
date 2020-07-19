@@ -1,0 +1,30 @@
+[
+  {
+    "organization": 1,
+    "proposition": 1,
+    "name": "ORG_1_PROP_1",
+    "rules": {
+      "all": [
+        {
+          "fact": "country",
+          "operator": "equal",
+          "value": "NL"
+        },
+        {
+          "fact": "fact",
+          "operator": "equal",
+          "value": 1,
+          "path": "$.nested.nestedField"
+        }
+      ]
+    },
+    "event": {
+      "type": "fdrid-list",
+      "params": {
+        "fdrids": [
+          "TV"
+        ]
+      }
+    }
+  }
+]

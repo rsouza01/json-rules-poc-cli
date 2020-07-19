@@ -1,0 +1,25 @@
+[
+  {
+    "organization": 1,
+    "proposition": 1,
+    "name": "ORG_1_PROP_1",
+    "rules": {
+      "all": [
+        {
+          "fact": "country",
+          "operator": "equal",
+          "value": "NL",
+          "path": "$.filterExpression.customAttributes"
+        }
+      ]
+    },
+    "event": {
+      "type": "fdrid-list",
+      "params": {
+        "fdrids": [
+          "TV"
+        ]
+      }
+    }
+  }
+]

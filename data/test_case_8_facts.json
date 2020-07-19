@@ -1,0 +1,12 @@
+[
+  {
+    "id": "1",
+    "organization": 1,
+    "proposition": 1,
+    "groupName": "TV",
+    "country": "NL",
+    "nested": {
+      "nestedField": 1
+    }
+  }
+]

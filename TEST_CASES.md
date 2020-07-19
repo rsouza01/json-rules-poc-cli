@@ -30,3 +30,12 @@ clear && node --require ts-node/register src/index.ts -f ./data/test_case_4_fact
 clear && node --require ts-node/register src/index.ts -f ./data/test_case_1_facts.json -e ./data/expression_rules.json
 ```
 
+## 6 - (TEST) Playing around with json-rule-engine path atribute
+
+```sh
+clear && DEBUG=json-rules-engine node --require ts-node/register src/index.ts -f ./data/test_case_7_facts.json -r ./data/test_case_7_rules.json
+```
+
+```sh
+clear && DEBUG=json-rules-engine node --require ts-node/register src/index.ts -f ./data/test_case_8_facts.json -r ./data/test_case_8_rules.json
+```

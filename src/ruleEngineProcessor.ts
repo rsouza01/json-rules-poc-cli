@@ -51,12 +51,13 @@ export class FirmwareRuleEngineProcessor {
 
       const ruleEngine: Engine = new Engine(ruleList, engineOptions);
 
+      ruleEngine.addFact('fact', fact);
 
       ruleEngine
       .run(fact)
       .then((results) => {
         console.log('========================================================================');
-        console.log(`FACT: ${JSON.stringify(fact)}`);
+        console.log(`FACT: ${JSON.stringify(fact, null, 2)}`);
         console.log('------------------------------------------------------------------------');
         // console.log(`RAW RESULT: ${JSON.stringify(results)}`);
         console.log(`# OF RESULTS: ${results.events.length}`);
