@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "organization": 1,
+    "proposition": 1,
+    "filterExpression": {
+      "hsdpAttributes": {
+        "groupName": "TV"
+      },
+      "firmwareComponents": [
+        "name:fc1, version:1, typeName: DT1, groupName: DG1",
+        "name:fc2, version:2"
+      ],
+      "hsdpAttributesArray": [
+        {
+          "arbitrary_data": "arbitrary_data_value"
+        }
+      ],
+      "customAttributes": {
+        "country": "NL",
+        "serialNumber": 9999,
+        "language": "Dutch"
+      }
+    }
+  }
+]

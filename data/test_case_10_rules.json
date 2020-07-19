@@ -1,0 +1,107 @@
+[
+  {
+    "organization": 1,
+    "proposition": 1,
+    "name": "ORG_1_PROP_1_WITHOUT_ARRAYS",
+    "rules": {
+      "all": [
+        {
+          "fact": "fact",
+          "operator": "equal",
+          "value": "TV",
+          "path": "$.filterExpression.hsdpAttributes.groupName"
+        },
+        {
+          "fact": "fact",
+          "operator": "equal",
+          "value": "NL",
+          "path": "$.filterExpression.customAttributes.country"
+        },
+        {
+          "fact": "fact",
+          "operator": "in",
+          "value": [
+            9999,
+            2222,
+            3333
+          ],
+          "path": "$.filterExpression.customAttributes.serialNumber"
+        },
+        {
+          "fact": "fact",
+          "operator": "equal",
+          "value": "Dutch",
+          "path": "$.filterExpression.customAttributes.language"
+        }
+
+      ]
+    },
+    "event": {
+      "type": "fdrid-list",
+      "params": {
+        "fdrids": [
+          "WITHOUT-ARRAYS"
+        ]
+      }
+    }
+  },
+  {
+    "organization": 1,
+    "proposition": 1,
+    "name": "ORG_1_PROP_1_WITH_ARRAYS",
+    "rules": {
+      "all": [
+        {
+          "fact": "fact",
+          "operator": "equal",
+          "value": "fc1",
+          "path": "$.filterExpression.hsdpAttributesArray.ANY.firmwareComponent"
+        },
+        {
+          "fact": "fact",
+          "operator": "equal",
+          "value": 1,
+          "path": "$.filterExpression.hsdpAttributesArray.ANY.firmwareComponentVersion"
+        },
+        {
+          "fact": "fact",
+          "operator": "equal",
+          "value": "TV",
+          "path": "$.filterExpression.hsdpAttributes.groupName"
+        },
+        {
+          "fact": "fact",
+          "operator": "equal",
+          "value": "NL",
+          "path": "$.filterExpression.customAttributes.country"
+        },
+        {
+          "fact": "fact",
+          "operator": "in",
+          "value": [
+            9999,
+            2222,
+            3333
+          ],
+          "path": "$.filterExpression.customAttributes.serialNumber"
+        },
+        {
+          "fact": "fact",
+          "operator": "equal",
+          "value": "Dutch",
+          "path": "$.filterExpression.customAttributes.language"
+        }
+
+      ]
+    },
+    "event": {
+      "type": "fdrid-list",
+      "params": {
+        "fdrids": [
+          "WITH-ARRAYS"
+        ]
+      }
+    }
+  }
+
+]
