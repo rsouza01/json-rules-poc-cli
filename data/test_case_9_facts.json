@@ -17,6 +17,9 @@
         {
           "firmwareComponent": "fc2",
           "firmwareComponentVersion": 2
+        },
+        {
+          "arbitrary_data": "arbitrary_data_value"
         }
       ],
       "customAttributes": {
