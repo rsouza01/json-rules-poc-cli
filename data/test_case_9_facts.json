@@ -7,6 +7,18 @@
       "hsdpAttributes": {
         "groupName": "TV"
       },
+      "hsdpAttributesArray": [
+        {
+          "firmwareComponent": "fc1",
+          "firmwareComponentVersion": 1,
+          "typeName": "DT1",
+          "groupName": "DG1"
+        },
+        {
+          "firmwareComponent": "fc2",
+          "firmwareComponentVersion": 2
+        }
+      ],
       "customAttributes": {
         "country": "NL",
         "serialNumber": 9999,
